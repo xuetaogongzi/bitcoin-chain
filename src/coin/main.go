@@ -3,6 +3,7 @@ package main
 import (
 	"bitcoin-chain/src/core"
 	"fmt"
+	"strconv"
 )
 
 func main() {
@@ -17,5 +18,10 @@ func main() {
 		fmt.Printf("Prev. hash: %x\n", block.PrevBlockHash)
 		fmt.Printf("Data: %s\n", block.Data)
 		fmt.Printf("Hash: %x\n", block.Hash)
+		fmt.Printf("Nonce: %d\n", block.Nonce)
+
+		pow := core.NewProofOfWork(block)
+		fmt.Printf("Pow: %s\n", strconv.FormatBool(pow.Validate()))
+		fmt.Println()
 	}
 }
