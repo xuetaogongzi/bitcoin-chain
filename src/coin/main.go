@@ -1,9 +1,8 @@
 package main
 
-func main() {
-	/*bc := core.NewBlockchain()
-	defer bc.Db.Close()
+import "bitcoin-chain/src/core"
 
-	cli := core.CLI{bc}
-	cli.Run()*/
+func main() {
+	cli := core.CLI{}
+	cli.Run()
 }
